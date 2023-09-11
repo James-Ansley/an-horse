@@ -78,6 +78,7 @@ const config = {
             'classic',
             /** @type {import('@docusaurus/preset-classic').Options} */
             ({
+                docs: false,
                 blog: {
                     routeBasePath: '/',
                     remarkPlugins: [math],
@@ -109,6 +110,7 @@ const config = {
             ({
                 hashed: true,
                 indexBlog: true,
+                indexDocs: false,
                 blogRouteBasePath: "/"
             }),
         ],

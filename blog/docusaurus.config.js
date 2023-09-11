@@ -81,6 +81,7 @@ const config = {
                 docs: false,
                 blog: {
                     routeBasePath: '/',
+                    blogTitle: 'An Horse Blog',
                     remarkPlugins: [math],
                     rehypePlugins: [katex],
                     feedOptions: {

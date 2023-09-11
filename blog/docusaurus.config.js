@@ -28,12 +28,6 @@ const config = {
     themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
         ({
-            docs: {
-                sidebar: {
-                    hideable: true,
-                }
-            },
-            // set this – navbar items
             // See: https://docusaurus.io/docs/api/themes/configuration#navbar
             navbar: {
                 title: 'An Horse Blog',
@@ -84,17 +78,13 @@ const config = {
             'classic',
             /** @type {import('@docusaurus/preset-classic').Options} */
             ({
-                docs: {
-                    sidebarPath: require.resolve('./sidebars.js'),
-                    remarkPlugins: [math],
-                    rehypePlugins: [katex],
-                },
                 blog: {
                     routeBasePath: '/',
                     remarkPlugins: [math],
                     rehypePlugins: [katex],
                     feedOptions: {
                         type: 'all',
+                        title: 'An Horse Blog',
                         copyright: `Copyright © ${new Date().getFullYear()} An Horse Blog`,
                         createFeedItems: async (params) => {
                             const {blogPosts, defaultCreateFeedItems, ...rest} = params;

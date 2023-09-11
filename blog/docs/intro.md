@@ -1,3 +1,0 @@
-# Intro
-
-A docs page

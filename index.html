@@ -25,9 +25,9 @@
 
 <pre id="horse">
             .''
-  ._.-.___.' (`\
+  ._,-､___,' (`\
  //(        ( `'
-'/ )\ ).__. )
+'/ )\ )､__, )
 ' <' `\ ._/'\
    `   \     \
 </pre>
@@ -47,19 +47,27 @@
         const screenHeight = document.body.clientHeight;
         const screenWidth = document.body.clientWidth;
 
-        if (y + horseHeight >= screenHeight || y < 0) {
-            dirY *= -1;
+        if (y + horseHeight >= screenHeight) {
+            dirY = -1
+        } else if (y < 0) {
+            dirY = 1
         }
-        if (x + horseWidth >= screenWidth || x < 0) {
-            dirX *= -1;
-            horse.style.transform = dirX < 0 ? "scaleX(-1)" : "";
+
+        if (x + horseWidth > screenWidth) {
+            dirX = -1
+            horse.style.transform = "scaleX(-1)";
+        } else if (x < 0) {
+            dirX = 1
+            horse.style.transform = "";
         }
+
         x += dirX * speed;
         y += dirY * speed;
         horse.style.left = x + "px";
         horse.style.top = y + "px";
         window.requestAnimationFrame(animate);
     }
+
     window.requestAnimationFrame(animate);
 </script>
 </body>

@@ -21,6 +21,8 @@ html[data-theme='dark'] {
 }
 
 :root {
+  --ifm-spacing-horizontal: 1.5em;
+
   --text-color: #213547;
   --text-color-alt: #273f54;
   --text-code-error: hsla(0, 100%, 50%, 90%);
@@ -68,8 +70,13 @@ body {
   flex: fit-content;
 }
 
+sup {
+  vertical-align: top;
+  position: relative;
+  top: -0.4em;
+}
 
-.theme-doc-markdown {
+main {
   max-width: 79ch;
   font-size: 1rem;
   margin: auto;
@@ -80,6 +87,7 @@ body {
   }
 
   h1 {
+    font-size: 2.5rem !important;
     color: currentColor;
   }
 
@@ -94,7 +102,7 @@ body {
   }
 
   h2 {
-    font-size: 1.5em;
+    font-size: 2em !important;
     margin: 2em 0 0.67em;
     padding-top: 1em;
     border-top: 1px solid var(--divider-color);
@@ -131,6 +139,14 @@ body {
   pre {
     background-color: var(--code-background);
   }
+}
+
+.main-wrapper .container > .row > :first-child {
+  --ifm-col-width: calc(2 / 12 * 100%) !important;
+}
+
+.main-wrapper .container > .row > :nth-child(2) {
+  --ifm-col-width: calc(8 / 12 * 100%) !important;
 }
 
 html[data-theme='dark'] .diagram {

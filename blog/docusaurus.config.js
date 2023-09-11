@@ -71,7 +71,7 @@ const config = {
                     //     ],
                     // },
                 ],
-                copyright: `Copyright © ${new Date().getFullYear()} An Horse Blog Built with Docusaurus.`,
+                copyright: `Copyright © ${new Date().getFullYear()} An Horse Blog. Built with Docusaurus.`,
             },
             prism: {
                 theme: lightCodeTheme,
@@ -93,6 +93,17 @@ const config = {
                     routeBasePath: '/',
                     remarkPlugins: [math],
                     rehypePlugins: [katex],
+                    feedOptions: {
+                        type: 'all',
+                        copyright: `Copyright © ${new Date().getFullYear()} An Horse Blog`,
+                        createFeedItems: async (params) => {
+                            const {blogPosts, defaultCreateFeedItems, ...rest} = params;
+                            return defaultCreateFeedItems({
+                                blogPosts: blogPosts.filter((item, index) => index < 10),
+                                ...rest,
+                            });
+                        },
+                    },
                 },
                 theme: {
                     customCss: [require.resolve('./src/css/custom.scss')],

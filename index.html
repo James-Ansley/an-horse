@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>An Horse</title>
+  <style>
+      :root, html, body {
+          margin: 0;
+          box-sizing: border-box;
+          overflow: hidden;
+          height: 100%;
+          width: 100%;
+      }
+
+      #horse {
+          font-size: 1rem;
+          position: absolute;
+          display: block;
+          padding: 0;
+          margin: 0;
+      }
+  </style>
+</head>
+<body>
+
+<pre id="horse">
+            .''
+  ._.-.___.' (`\
+ //(        ( `'
+'/ )\ ).__. )
+' <' `\ ._/'\
+   `   \     \
+</pre>
+
+<script>
+    let x = 0;
+    let y = 0;
+    let dirX = 1;
+    let dirY = 1;
+    const speed = 0.5;
+
+    let horse = document.getElementById("horse");
+    const horseWidth = horse.clientWidth;
+    const horseHeight = horse.clientHeight;
+
+    function animate() {
+        const screenHeight = document.body.clientHeight;
+        const screenWidth = document.body.clientWidth;
+
+        if (y + horseHeight >= screenHeight || y < 0) {
+            dirY *= -1;
+        }
+        if (x + horseWidth >= screenWidth || x < 0) {
+            dirX *= -1;
+            horse.style.transform = dirX < 0 ? "scaleX(-1)" : "";
+        }
+        x += dirX * speed;
+        y += dirY * speed;
+        horse.style.left = x + "px";
+        horse.style.top = y + "px";
+        window.requestAnimationFrame(animate);
+    }
+    window.requestAnimationFrame(animate);
+</script>
+</body>
+</html>

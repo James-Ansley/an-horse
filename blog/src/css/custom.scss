@@ -141,16 +141,22 @@ main {
   }
 }
 
-.main-wrapper .container > .row > :first-child {
-  --ifm-col-width: calc(2 / 12 * 100%) !important;
-}
-
-.main-wrapper .container > .row > :nth-child(2) {
-  --ifm-col-width: calc(8 / 12 * 100%) !important;
-}
+//.main-wrapper .container > .row > :first-child {
+//  --ifm-col-width: calc(2 / 12 * 100%) !important;
+//}
+//
+//.main-wrapper .container > .row > :nth-child(2) {
+//  --ifm-col-width: calc(8 / 12 * 100%) !important;
+//}
 
 html[data-theme='dark'] .diagram {
   filter: invert(0.92) !important;
+}
+
+.small-block {
+  width: 75%;
+  margin: auto;
+  display: block;
 }
 
 // Code Blocks

@@ -35,35 +35,20 @@ const config = {
                     alt: 'My Site Logo',
                     src: 'img/logo.svg',
                 },
-                items: [
-                    {
-                        href: 'https://github.com/James-Ansley/an-horse',
-                        label: 'GitHub',
-                        position: 'right',
-                    },
-                ],
+                items: [],
             },
             // See: https://docusaurus.io/docs/api/themes/configuration#footer-1
             footer: {
                 style: 'light',
                 links: [
-                    // {
-                    //     title: 'Community',
-                    //     items: [
-                    //         {
-                    //             label: 'Stack Overflow',
-                    //             href: 'https://stackoverflow.com',
-                    //         },
-                    //         {
-                    //             label: 'Discord',
-                    //             href: 'https://discordapp.com',
-                    //         },
-                    //         {
-                    //             label: 'Twitter',
-                    //             href: 'https://twitter.com',
-                    //         },
-                    //     ],
-                    // },
+                    {
+                        label: 'GitHub',
+                        href: 'https://github.com/James-Ansley/an-horse',
+                    },
+                    {
+                        label: 'RSS',
+                        href: 'https://an.horse/blog/rss.xml',
+                    }
                 ],
                 copyright: `Copyright © ${new Date().getFullYear()} An Horse Blog. Built with Docusaurus.`,
             },
@@ -89,7 +74,11 @@ const config = {
                         title: 'An Horse Blog',
                         copyright: `Copyright © ${new Date().getFullYear()} An Horse Blog`,
                         createFeedItems: async (params) => {
-                            const {blogPosts, defaultCreateFeedItems, ...rest} = params;
+                            const {
+                                blogPosts,
+                                defaultCreateFeedItems,
+                                ...rest
+                            } = params;
                             return defaultCreateFeedItems({
                                 blogPosts: blogPosts.filter((item, index) => index < 10),
                                 ...rest,

@@ -7,3 +7,8 @@ status = 200
 from = "/teaches/python/*"
 to = "https://an-horse-teaches-python.netlify.app/teaches/python/:splat"
 status = 200
+
+[[redirects]]
+from = "/teaches/java/*"
+to = "https://an-horse-teaches-java.netlify.app/teaches/java/:splat"
+status = 200

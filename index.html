@@ -33,19 +33,24 @@
 </pre>
 
 <script>
-    let x = 0;
-    let y = 0;
-    let dirX = 1;
-    let dirY = 1;
     const speed = 0.5;
+    const maxRotation = 3;
+
+    const horse = document.getElementById("horse");
+    const horseWidth = horse.clientWidth;
+    const horseHeight = horse.clientHeight;
+
+    let x = Math.floor(
+        Math.random() * (document.body.clientWidth - horseWidth)
+    );
+    let y = Math.floor(
+        Math.random() * (document.body.clientHeight - horseHeight)
+    );
+    let dirX = Math.floor(Math.random() * 2) * 2 - 1;
+    let dirY = Math.floor(Math.random() * 2) * 2 - 1;
 
     let rotation = 0;
     let dirRot = 1;
-    const maxRotation = 3;
-
-    let horse = document.getElementById("horse");
-    const horseWidth = horse.clientWidth;
-    const horseHeight = horse.clientHeight;
 
     function animate() {
         const screenHeight = document.body.clientHeight;
@@ -84,6 +89,7 @@
         y += dirY * speed + yWobble;
         horse.style.left = x + "px";
         horse.style.top = y + "px";
+
         window.requestAnimationFrame(animate);
     }
 

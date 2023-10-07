@@ -4,6 +4,16 @@ to = "https://an-horse-blogs.netlify.app/blog/:splat"
 status = 200
 
 [[redirects]]
+from = "/teaches/python"
+to = "/teaches/python/"
+status = 200
+
+[[redirects]]
+from = "/teaches/java"
+to = "/teaches/java/"
+status = 200
+
+[[redirects]]
 from = "/teaches/python/*"
 to = "https://an-horse-teaches-python.netlify.app/teaches/python/:splat"
 status = 200

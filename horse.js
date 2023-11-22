@@ -15,10 +15,11 @@ horse.style.cssText = `
     padding: 0;
     margin: 0;
     text-align: left;
+    pointer-events: none;
+    user-select: none;
 `;
 
 document.body.appendChild(horse);
-
 
 const speed = 0.5;
 const maxRotation = 3;

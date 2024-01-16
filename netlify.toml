@@ -14,6 +14,6 @@ to = "https://an-horse-teaches-java.netlify.app/teaches/java/:splat"
 status = 200
 
 [[redirects]]
-from = "/talks/:talk/:url/*"
-to = "https://an-horse-talks.netlify.app/talks/:talk/:url/index.html"
+from = "/talks/*"
+to = "https://an-horse-talks.netlify.app/talks/:splat/index.html"
 status = 200

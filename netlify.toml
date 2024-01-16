@@ -17,8 +17,3 @@ status = 200
 from = "/talks/*"
 to = "https://an-horse-talks.netlify.app/talks/:splat"
 status = 200
-
-[[redirects]]
-from = "*"
-to = "https://an.horse/404"
-status = 404

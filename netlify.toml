@@ -15,5 +15,5 @@ status = 200
 
 [[redirects]]
 from = "/presents/*"
-to = "https://an-horse-presents.netlify.app/talks/:splat"
+to = "https://an-horse-presents.netlify.app/presents/:splat"
 status = 200
